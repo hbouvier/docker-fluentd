@@ -1,0 +1,19 @@
+<match syslog.**>
+  type elasticsearch
+  host ES_PORT_9200_TCP_ADDR
+  port ES_PORT_9200_TCP_PORT
+  index_name fluentd
+  type_name fluentd
+  logstash_format true
+  flush_interval 5s # for testing
+</match>
+
+<match es.**>
+  type elasticsearch
+  host ES_PORT_9200_TCP_ADDR
+  port ES_PORT_9200_TCP_PORT
+  index_name fluentd
+  type_name fluentd
+  logstash_format true
+  flush_interval 5s # 5s for testing. On production environment, 60s or higher is better
+</match>

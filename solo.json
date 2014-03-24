@@ -1,0 +1,17 @@
+{
+  "td_agent": {
+	"default_config" : true,
+	"includes" : true,
+	"plugins" : [
+		"elasticsearch"
+	]
+  },
+  "packages" : [
+    "libcurl4-openssl-dev"
+  ],
+  "run_list": [
+    "recipe[apt]",
+	"recipe[fluentd::default]",
+    "recipe[td-agent::default]"
+  ]
+}

@@ -1,0 +1,4 @@
+#!/bin/sh
+NAME=${1-fluentd}
+LINK=${2-elasticsearch}
+docker run -d -name "${NAME}" -p 8888:8888 -link ${LINK}:es hbouvier/fluentd
